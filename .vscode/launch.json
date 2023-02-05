@@ -1,0 +1,50 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in library 'rpg_test'",
+      "cargo": {
+        "args": ["test", "--no-run", "--lib", "--package=rpg_test"],
+        "filter": {
+          "name": "rpg_test",
+          "kind": "lib"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'rpg_test'",
+      "cargo": {
+        "args": ["build", "--bin=rpg_test", "--package=rpg_test"],
+        "filter": {
+          "name": "rpg_test",
+          "kind": "bin"
+        }
+      },
+      "args": ["input.csv"],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in executable 'rpg_test'",
+      "cargo": {
+        "args": ["test", "--no-run", "--bin=rpg_test", "--package=rpg_test"],
+        "filter": {
+          "name": "rpg_test",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
